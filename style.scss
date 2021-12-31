@@ -10,7 +10,48 @@ form input:focus{
     font-size: 18px;
     border-radius: 20px;
     border: 3px solid rgba(158, 189, 236, 0.877);
+
+ 
 }
+// Mapas
+$colors: (
+    'primario': red,
+    'secundario': white,
+    'peligro': blue,
+    'negro': black,
+);
+.p1{
+    color: map-get($map: $colors, $key: 'primario')!important;
+}
+.p2{
+    color: map-get($map: $colors, $key: 'secundario')!important;
+    font-size: larger;
+    background-color: blue;
+}
+.p3{
+    color: map-get($map: $colors, $key: 'peligro')!important;
+}
+// Extend
+.p4{
+    @extend .p2;
+    font-size: small;
+}
+
+// Mixin
+@mixin parrafos {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    padding: 20px;
+}
+.p1{
+    @include parrafos;
+}
+
+.p3{
+    @include parrafos;
+}
+
+
 // .card{
 //     border-radius: 8px;
 //     box-shadow: 0 2px 2px rgb(0,0,0,0.2);
